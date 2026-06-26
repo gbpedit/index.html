@@ -4,646 +4,96 @@
   <meta charset="UTF-8" />
   <title>Car and Computer Electric | Automotive Repair</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --bg-alt: #1f2833;
-      --accent: #66fcf1;
-      --accent-soft: #45a29e;
-      --text: #c5c6c7;
-      --white: #ffffff;
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <!-- Google Search Console verification -->
+  <!-- Replace YOUR_CODE_HERE with the code Google gives you -->
+  <meta name="google-site-verification" content="YOUR_CODE_HERE" />
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0b0c10, #1f2833);
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    .nav-links a:hover {
-      background: #15171f;
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.25rem 2.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.4rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-text h2 {
-      font-size: 1.2rem;
-      color: var(--accent-soft);
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-text p {
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(102, 252, 241, 0.08);
-      border: 1px solid rgba(102, 252, 241, 0.35);
-      font-size: 0.8rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #0b0c10;
-      font-weight: 600;
-    }
-
-    .btn-primary:hover {
-      background: #5ce9e0;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: var(--accent-soft);
-      color: var(--accent-soft);
-    }
-
-    .btn-outline:hover {
-      background: rgba(69, 162, 158, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .hero-card {
-      background: var(--bg-alt);
-      border-radius: 12px;
-      padding: 1.5rem;
-      border: 1px solid #222;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    .hero-card h3 {
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-card ul {
-      list-style: none;
-      margin-bottom: 1rem;
-    }
-
-    .hero-card li {
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
-    }
-
-    .hero-card li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 0.4rem;
-    }
-
-    .hero-card-footer {
-      font-size: 0.8rem;
-      color: #999;
-    }
-
-    main {
-      background: #0b0c10;
-    }
-
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem;
-      border-top: 1px solid #15171f;
-    }
-
-    .section-header {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-header h2 {
-      color: var(--white);
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-header p {
-      color: #9fa3aa;
-      font-size: 0.95rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--bg-alt);
-      border-radius: 10px;
-      padding: 1.25rem;
-      border: 1px solid #222;
-      font-size: 0.95rem;
-    }
-
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      margin-bottom: 0.75rem;
-    }
-
-    .card ul {
-      list-style: none;
-      font-size: 0.9rem;
-    }
-
-    .card li {
-      margin-bottom: 0.35rem;
-    }
-
-    .card li::before {
-      content: "–";
-      color: var(--accent-soft);
-      margin-right: 0.35rem;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-      gap: 2rem;
-    }
-
-    .contact-info {
-      font-size: 0.95rem;
-    }
-
-    .contact-info h3 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-row {
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-label {
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .contact-form {
-      background: var(--bg-alt);
-      border-radius: 10px;
-      padding: 1.5rem;
-      border: 1px solid #222;
-    }
-
-    .contact-form h3 {
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .field {
-      margin-bottom: 0.9rem;
-    }
-
-    .field label {
-      display: block;
-      font-size: 0.85rem;
-      margin-bottom: 0.25rem;
-      color: #b0b3b8;
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      padding: 0.55rem 0.6rem;
-      border-radius: 6px;
-      border: 1px solid #333;
-      background: #0b0c10;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      outline: none;
-      border-color: var(--accent-soft);
-      box-shadow: 0 0 0 1px rgba(69, 162, 158, 0.4);
-    }
-
-    footer {
-      border-top: 1px solid #15171f;
-      padding: 1.5rem 1.25rem 2rem;
-      margin-top: 1rem;
-      background: #050608;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: #8b8f96;
-    }
-
-    .footer-inner span {
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <div class="logo">Car &amp; Computer Electric</div>
-      <div class="nav-links">
-        <a href="#diagnostics">Diagnostics</a>
-        <a href="#updates">Software Updates</a>
-        <a href="#vin">VIN Programming</a>
-        <a href="#quote">Quote / Contact</a>
-      </div>
+    <h1>Car and Computer Electric</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="cars.html">Cars</a>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="hero-text">
-      <div class="hero-badge">
-        <span>Automotive repair • Computer diagnostics • Electrical systems</span>
-      </div>
-      <h1>Car and Computer Electric</h1>
-      <h2>Modern vehicles run on data, modules, and code—your repair shop should too.</h2>
-      <p>
-        From brake systems and ABS modules to CAN bus data and VIN programming, we combine
-        hands‑on automotive experience with computer‑level diagnostics to keep your vehicle
-        safe, reliable, and up to date.
-      </p>
-      <div class="hero-actions">
-        <a href="#quote" class="btn btn-primary">Request a quote</a>
-        <a href="#diagnostics" class="btn btn-outline">View services</a>
-      </div>
-    </div>
-
-    <aside class="hero-card">
-      <h3>Why your car needs computer‑level care</h3>
-      <ul>
-        <li>Brake and ABS systems rely on sensors, modules, and live data.</li>
-        <li>CAN bus networks connect every major system in the vehicle.</li>
-        <li>Software updates fix bugs, improve performance, and add features.</li>
-        <li>VIN programming ensures modules match your exact vehicle configuration.</li>
-      </ul>
-      <div class="hero-card-footer">
-        Proudly serving Honaker, VA and surrounding areas since 2012.
-      </div>
-    </aside>
+    <h2>Automotive & Computer Diagnostics Done Right</h2>
+    <p>
+      Professional electrical, diagnostic, and repair services for your vehicle and your tech—
+      all in one place.
+    </p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Book an appointment
+    </button>
   </section>
 
-  <main>
-    <section id="diagnostics" class="section">
-      <div class="section-header">
-        <h2>Computer Analytics &amp; Diagnostics</h2>
+  <section id="services" class="section">
+    <h3>Our Services</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Automotive Electrical Repair</h4>
+        <p>Battery, alternator, wiring, and electrical troubleshooting for all makes and models.</p>
+      </div>
+      <div class="card">
+        <h4>Computer Diagnostics</h4>
+        <p>Check-engine light, sensor issues, and advanced scan tool diagnostics.</p>
+      </div>
+      <div class="card">
+        <h4>Computer & Tech Support</h4>
+        <p>PC tune-ups, virus removal, and basic hardware/software support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Experience You Can Trust</h4>
         <p>
-          We don’t just clear codes—we read live data, analyze module behavior, and track
-          how your vehicle responds under real conditions.
+          Years of hands-on work with automotive electrical systems and computer hardware,
+          focused on honest diagnostics and clear communication.
         </p>
       </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Brake &amp; ABS Systems</h3>
-          <p>
-            Modern brake systems depend on sensors, control modules, and real‑time feedback.
-            We diagnose issues at the data level, not just the dash light.
-          </p>
-          <ul>
-            <li>ABS and traction control diagnostics</li>
-            <li>Sensor and wiring verification</li>
-            <li>Module communication checks</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>CAN Bus Data</h3>
-          <p>
-            Your vehicle’s CAN bus is the nervous system that connects every major module.
-            We monitor and interpret that data to find hidden faults.
-          </p>
-          <ul>
-            <li>Network health and signal integrity</li>
-            <li>Module communication errors</li>
-            <li>Intermittent data dropouts</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Full‑System Scans</h3>
-          <p>
-            Instead of guessing, we run complete scans and analytics to see how every
-            system is behaving—before and after repair.
-          </p>
-          <ul>
-            <li>Pre‑repair baseline diagnostics</li>
-            <li>Post‑repair verification</li>
-            <li>Printable reports on request</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="updates" class="section">
-      <div class="section-header">
-        <h2>Software Updates</h2>
+      <div class="card">
+        <h4>Local & Reliable</h4>
         <p>
-          Vehicles receive software updates just like phones and computers. Staying current
-          can improve reliability, safety, and performance.
+          Serving our community with fair pricing, fast turnaround, and a commitment to quality.
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Module Updates</h3>
-          <p>
-            We update control modules where supported, ensuring they run the latest
-            manufacturer‑approved software.
-          </p>
-          <ul>
-            <li>Engine and transmission modules</li>
-            <li>ABS and stability control systems</li>
-            <li>Body and comfort modules</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Bug Fixes &amp; Improvements</h3>
-          <p>
-            Many drivability issues and warning lights trace back to outdated software.
-            Updates can resolve problems without replacing parts.
-          </p>
-          <ul>
-            <li>Cold‑start and idle behavior fixes</li>
-            <li>Shift quality improvements</li>
-            <li>Updated diagnostic routines</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Future‑Ready Vehicles</h3>
-          <p>
-            Keeping your vehicle’s software current helps it stay compatible with new
-            components, tools, and standards.
-          </p>
-          <ul>
-            <li>Better long‑term reliability</li>
-            <li>Improved compatibility with new parts</li>
-            <li>Reduced surprise warning lights</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="vin" class="section">
-      <div class="section-header">
-        <h2>VIN Programming</h2>
+  <section id="contact" class="section">
+    <h3>Contact</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Get in touch</h4>
         <p>
-          When modules are replaced or added, they must be programmed to your vehicle’s
-          VIN so every system knows exactly what it’s working with.
+          Phone: (555) 555‑5555<br />
+          Email: therealunforgiven.kd@gmail.com<br />
+          Location: Bristol, VA
         </p>
       </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Module Matching</h3>
-          <p>
-            We program replacement modules to match your vehicle’s VIN and configuration,
-            helping avoid communication errors and warning lights.
-          </p>
-          <ul>
-            <li>New and used module setup</li>
-            <li>VIN and option coding</li>
-            <li>Security and immobilizer alignment</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>System Integration</h3>
-          <p>
-            Proper VIN programming ensures every module understands the vehicle’s exact
-            equipment—from brakes and steering to comfort features.
-          </p>
-          <ul>
-            <li>Feature enablement and disablement</li>
-            <li>Correct option mapping</li>
-            <li>Reduced compatibility issues</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Data‑Driven Verification</h3>
-          <p>
-            After programming, we verify operation using live data and system tests—not
-            just a quick code clear.
-          </p>
-          <ul>
-            <li>Post‑programming diagnostics</li>
-            <li>Road‑test validation</li>
-            <li>Customer‑friendly explanations</li>
-          </ul>
-        </div>
+      <div class="card">
+        <h4>Request a callback</h4>
+        <p>Send us an email with your vehicle details and we’ll follow up with availability.</p>
       </div>
-    </section>
-
-    <section id="quote" class="section">
-      <div class="section-header">
-        <h2>Quote &amp; Contact</h2>
-        <p>
-          Ready to schedule diagnostics or ask a question? Reach out using the details
-          below or send a message through the form.
-        </p>
-      </div>
-
-      <div class="contact-layout">
-        <div class="contact-info">
-          <h3>Shop information</h3>
-          <div class="contact-row">
-            <span class="contact-label">Phone:</span>
-            <span>(276) 263‑6701</span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-label">Email:</span>
-            <a href="mailto:therealunforgiven.kd@gmail.com">
-              therealunforgiven.kd@gmail.com
-            </a>
-          </div>
-          <div class="contact-row">
-            <span class="contact-label">Address:</span>
-            <span>478 Wysor Valley Rd, Honaker, VA 24260</span>
-          </div>
-          <div class="contact-row" style="margin-top:0.75rem;">
-            <span class="contact-label">Service focus:</span>
-            <span>
-              Computer‑based diagnostics, electrical systems, module programming, and
-              modern brake/ABS analysis.
-            </span>
-          </div>
-        </div>
-
-        <form class="contact-form">
-          <h3>Send a message</h3>
-          <p style="font-size:0.85rem; margin-bottom:0.75rem;">
-            This is a sample form layout. In production, connect it to your preferred
-            email or backend service.
-          </p>
-
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" />
-          </div>
-
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" type="tel" placeholder="Best number to reach you" />
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Your email address" />
-          </div>
-
-          <div class="field">
-            <label for="message">Vehicle &amp; issue</label>
-            <textarea id="message" placeholder="Year, make, model, and what the vehicle is doing."></textarea>
-          </div>
-
-          <button type="button" class="btn btn-primary">
-            Submit (demo only)
-          </button>
-        </form>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <div class="footer-inner">
-      <span>Proudly created in 2012 • Car and Computer Electric</span>
-      <span>Honaker, VA • Automotive repair &amp; computer diagnostics</span>
-    </div>
+    &copy; <span id="year"></span> Car and Computer Electric. All rights reserved.
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
